@@ -1,0 +1,12 @@
+server:
+  applicationConnectors:
+  - type: http
+    port: 2505
+    acceptQueueSize: 0
+  adminConnectors:
+  - type: http
+    port: 2506
+  minThreads: 150
+  maxThreads: 150
+  gzip:
+    enabled: true

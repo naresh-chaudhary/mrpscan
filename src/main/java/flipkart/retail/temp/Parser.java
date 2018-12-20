@@ -1,9 +1,6 @@
 package flipkart.retail.temp;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -11,9 +8,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by mohammad.talha on 20/12/18.
+ * Created by nareshkumar.v on 21/12/18.
  */
-public class ReadFile {
+public class Parser {
 
   public String findMrp(String text) {
     String res = "";
@@ -65,8 +62,8 @@ public class ReadFile {
       Scanner scanner = new Scanner(new File(file));
       while (scanner.hasNext()) {
         String text = scanner.nextLine();
-        ReadFile readFile = new ReadFile();
-        String mrp = readFile.findMrp(text);
+        Parser parser = new Parser();
+        String mrp = parser.findMrp(text);
         if (mrp.length() != 0 && (mrp.charAt(0) == '2' || mrp.charAt(0) == '3')) {
           Double d = Double.parseDouble(mrp);
           if (d > 1999.0) {
